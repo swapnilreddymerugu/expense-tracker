@@ -56,6 +56,14 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS=True
 ALLOWED_HOSTS = ["*"]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://expense-tracker-frontend-six-coral.vercel.app"
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://expense-tracker-frontend-six-coral.vercel.app"
+]
+
+
 
 ROOT_URLCONF = 'Backend.urls'
 

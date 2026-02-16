@@ -2,6 +2,7 @@ import React , {useState, useEffect} from "react";
 import {toast,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from 'react-router-dom'
+import API_URL from "../api";
 
 const ChangePassword = () => {
 
@@ -13,7 +14,7 @@ const ChangePassword = () => {
             navigate('/login')
         }
 
-    },[])
+    },[userId, navigate])
 
    
 
@@ -36,7 +37,7 @@ const ChangePassword = () => {
             return;
         }
         try{
-            const response=await fetch(`http://127.0.0.1:8000/api/change_password/${userId}/`,{
+            const response=await fetch(`${API_URL}/api/change_password/${userId}/`,{
             method:'POST',
             headers:{'Content-Type' : 'application/json'},
             body:JSON.stringify({

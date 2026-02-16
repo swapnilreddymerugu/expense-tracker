@@ -2,6 +2,7 @@ import React ,{useEffect,useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import{Pie} from 'react-chartjs-2'
 import {Chart, ArcElement,Tooltip,Legend} from 'chart.js'
+import API_URL from "../api";
 
 
 
@@ -39,11 +40,11 @@ function Dashboard() {
             navigate('/login')
         }
         fetchExpenses(userId)
-    },[])
+    },[userId, navigate])
 
     const fetchExpenses=async(userId)=>{
       try{
-          const response= await fetch(`http://127.0.0.1:8000/api/manage_expense/${userId}`);
+          const response= await fetch(`${API_URL}/api/manage_expense/${userId}`);
           const data = await response.json();
           setExpenses(data);
           calculateTotals(data)

@@ -4,6 +4,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import {toast,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import API_URL from "../api";
 
 
 const SalarySheet = () => {
@@ -29,12 +30,12 @@ const SalarySheet = () => {
     }
     fetchExpenses(userId);
     fetchSalary(userId);
-  }, []);
+  }, [userId, navigate]);
 
   const fetchExpenses = async (userId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/manage_expense/${userId}`,
+        `${API_URL}/api/manage_expense/${userId}`,
       );
       const data = await response.json();
       setExpenses(data);
@@ -87,7 +88,7 @@ const SalarySheet = () => {
   const fetchSalary = async (userId) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/salary/${userId}`,
+        `${API_URL}/api/salary/${userId}`,
       );
       const data = await response.json();
       setSalary(data.salary);
@@ -102,7 +103,7 @@ const SalarySheet = () => {
 
    const handleUpdate=async()=>{
           try{
-              const response= await fetch(`http://127.0.0.1:8000/api/update_salary/${userId}/`,{
+              const response= await fetch(`${API_URL}/api/update_salary/${userId}/`,{
                   method:'PUT',
                   headers:{'Content-Type':'application/json'},
                   body:JSON.stringify({
@@ -137,7 +138,7 @@ const SalarySheet = () => {
         try {
             if (!userId) return;
 
-            const res = await fetch(`http://127.0.0.1:8000/api/savings/${userId}/`,
+            const res = await fetch(`${API_URL}/api/savings/${userId}/`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

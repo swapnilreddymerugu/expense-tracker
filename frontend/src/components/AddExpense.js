@@ -2,6 +2,7 @@ import React , {useState, useEffect} from "react";
 import {toast,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from 'react-router-dom'
+import API_URL from "../api";
 
 const AddExpense = () =>{
     const navigate=useNavigate()
@@ -17,7 +18,7 @@ const AddExpense = () =>{
         if(!userId){
             navigate('/login')
         }
-    },[])
+    },[userId, navigate])
 
     const handleChange=(e)=>{
         setformData({...formData,[e.target.name]:e.target.value});
@@ -27,7 +28,7 @@ const AddExpense = () =>{
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try {
-            const response=await fetch('http://127.0.0.1:8000/api/add_expense/',{
+            const response=await fetch(`${API_URL}/api/add_expense/`,{
                 method:'POST',
                 headers:{'Content-Type' : 'application/json'},
                 body:JSON.stringify({
