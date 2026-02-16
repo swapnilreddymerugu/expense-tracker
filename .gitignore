@@ -3,3 +3,19 @@ node_modules/
 __pycache__/
 db.sqlite3
 staticfiles/
+# Virtual Environment
+env/
+Backend/env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual Environment
+env/
+Backend/env/
+
+# Python cache
+__pycache__/
+*.pyc
+
