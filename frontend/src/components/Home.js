@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import bg from '../assets/home.png'
-import API_URL from "../api.js";
+import API_URL from "../api";
 
 
 function Home() {
