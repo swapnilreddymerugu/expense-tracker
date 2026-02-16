@@ -4,7 +4,8 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import {toast,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import API_URL from "../api";
+import API_URL from "../api.js";
+
 
 
 const SalarySheet = () => {

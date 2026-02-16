@@ -2,7 +2,8 @@ import React ,{useEffect,useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import{Pie} from 'react-chartjs-2'
 import {Chart, ArcElement,Tooltip,Legend} from 'chart.js'
-import API_URL from "../api";
+import API_URL from "../api.js";
+
 
 
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
-import API_URL from "../api";
+import API_URL from "../api.js";
+
 
 function Navbar() {
     const navigate=useNavigate()
