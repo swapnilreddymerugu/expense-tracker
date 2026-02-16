@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a^v@pp@x7pj*g6)fk@g(l^ha=%6%)2k)zsb24u@9trw8=wpsh&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ "expense-backend-zt4e.onrender.com",
+    "localhost",
+    "127.0.0.1",]
 
 
 # Application definition
@@ -53,13 +55,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS=True
-ALLOWED_HOSTS = ["*"]
+
+
+
 
 CORS_ALLOWED_ORIGINS = [
     "https://expense-tracker-frontend-six-coral.vercel.app"
 ]
 CSRF_TRUSTED_ORIGINS = [
+    "https://expense-backend-zt4e.onrender.com",
     "https://expense-tracker-frontend-six-coral.vercel.app"
 ]
 
